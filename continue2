@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class StringProcessing {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        System.out.println("Processing the string character by character:");
+
+        // Loop through each character in the input string
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            // Skip processing spaces
+            if (ch == ' ') {
+                System.out.println("Skipping space...");
+                continue; // Skip rest of the loop body and continue with the next character
+            }
+
+            // If the character is 'x', break out of the loop
+            if (ch == 'x') {
+                System.out.println("Found 'x'. Exiting the loop...");
+                break; // Exit the loop
+            }
+
+            // Process the character if not a space or 'x'
+            System.out.println("Processing character: " + ch);
+        }
+
+        scanner.close();
+    }
+}
